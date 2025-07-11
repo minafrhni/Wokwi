@@ -1,45 +1,33 @@
-# 🚦 Raspberry Pi Pico Traffic Light Simulation with 7-Segment Display
+# Raspberry Pi Pico Traffic Light with 7-Segment Countdown
 
-This project simulates a **traffic light system** using a Raspberry Pi Pico, three LEDs (Red, Yellow, Green), and a **7-segment display** to show countdown timers.
+This project simulates a real-world traffic light system using the Raspberry Pi Pico. It features:
+- Red, yellow, and green LEDs
+- A 7-segment display showing countdown timer for each light
 
-It's designed and tested fully online using **Wokwi Simulator**.
+### 🔧 Hardware Used
+- Raspberry Pi Pico
+- 3 LEDs (Red, Yellow, Green)
+- 7-segment display (common cathode)
+- Resistors and wires
 
+### 🚦 Logic
+- Red light: 5-second countdown
+- Yellow light: 1 second
+- Green light: 5-second countdown
+- Yellow light: 1 second
 
+### 🧠 How it works
+The 7-segment display is controlled by 7 GPIO pins, using bitwise patterns for digits 0-9. LEDs are turned on/off based on the current phase of the traffic light.
 
-## 🔗 Live Simulation (Wokwi)
+### 📂 Files
+- `main.py`: Contains the full code
+- `diagram.json`: Contains diagram
 
-You can run the simulation directly in your browser:
+### 🛠️ Future Improvements
+- Add button input to pause/reset
+- Add buzzer for sound alert
+- Use I2C 7-segment display for fewer GPIOs
 
-👉 [Open Project in Wokwi](https://wokwi.com/projects/436000466121049089)
-
-
-
-## 🔧 Circuit Diagram
-
-Here’s how the components are connected to the Raspberry Pi Pico:
-
-
-
-
-## 🧠 Features
-
-- Traffic light sequence (Red → Yellow → Green → Yellow)
-- Countdown display using 7-segment
-- Infinite looping cycle
-- Fully simulated on Wokwi 
-
-
-
-## 🛠️ Technologies Used
-
-- MicroPython  
-- Wokwi Simulator  
-- Raspberry Pi Pico  
-- LEDs and 7-segment display
-
-
-## 🚀 Getting Started
-
-1. Open the Wokwi project link above.
-2. Click **▶ Run** to start the simulation.
-3. Observe the traffic light and 7-segment countdown in sync.
+### ✅ Simulation
+This project was tested using [Wokwi Simulator](https://wokwi.com), which supports Raspberry Pi Pico.
+You can run the simulation directly in your browser: [Open Project in Wokwi](https://wokwi.com/projects/436000466121049089)
