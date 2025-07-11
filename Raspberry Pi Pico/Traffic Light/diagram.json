@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "mina_frhni",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -99.15,
+      "left": 61.2,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 6, "left": -101.8, "attrs": { "color": "green" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -70.8,
+      "left": -101.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -32.4,
+      "left": -101.8,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 32.75,
+      "left": -9.6,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 42.35,
+      "left": -9.6,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 23.15,
+      "left": -9.6,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-7segment", "id": "sevseg1", "top": -81.42, "left": 158.68, "attrs": {} }
+  ],
+  "connections": [
+    [ "led1:C", "pico:GND.4", "green", [ "v9.6", "h125.2", "v19.2" ] ],
+    [ "led3:C", "pico:GND.4", "green", [ "h-9.2", "v57.6", "h124.8", "v9.6" ] ],
+    [ "led2:C", "pico:GND.4", "green", [ "h-18.8", "v105.6", "h172.8" ] ],
+    [ "r3:1", "led2:A", "green", [ "h-9.6", "v-48" ] ],
+    [ "r1:1", "led3:A", "green", [ "h-19.2", "v9.6" ] ],
+    [ "r2:1", "led1:A", "green", [ "v0" ] ],
+    [ "sevseg1:COM.2", "pico:VSYS", "red", [ "v-27.96", "h-49.2" ] ],
+    [ "sevseg1:F", "pico:GP7", "gold", [ "v-27.96", "h-124.8", "v105.6" ] ],
+    [ "sevseg1:G", "pico:GP8", "#8f4814", [ "v-27.96", "h-105.6", "v115.2" ] ],
+    [ "sevseg1:E", "pico:GP6", "purple", [ "v9.6", "h-86.4", "v-9.6" ] ],
+    [ "sevseg1:D", "pico:GP5", "yellow", [ "v9.6", "h-86.4", "v-28.8" ] ],
+    [ "r3:2", "pico:GP10", "green", [ "h8.4", "v9.6" ] ],
+    [ "r1:2", "pico:GP11", "green", [ "h8.4", "v9.6" ] ],
+    [ "r2:2", "pico:GP12", "green", [ "h8.4", "v96" ] ],
+    [ "sevseg1:C", "pico:GP4", "cyan", [ "v9.6", "h-96", "v-38.4" ] ],
+    [ "sevseg1:A", "pico:GP2", "violet", [ "v-27.96", "h-153.6", "v48" ] ],
+    [ "sevseg1:B", "pico:GP3", "green", [ "v-27.96", "h-172.8", "v57.6" ] ]
+  ],
+  "dependencies": {}
+}
